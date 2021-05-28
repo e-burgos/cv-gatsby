@@ -13,9 +13,10 @@ const Layout = ({children, language}) => {
                 <meta name="author" content="Esteban Burgos" />
                 <title>Esteban Burgos Developer</title>
                 <link rel="icon" type="image/x-icon" href="/others/favicon.ico" />
-                <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-                <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-                <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+                <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossOrigin="anonymous"></script>
+                <link rel="preconnect" href="https://fonts.gstatic.com"/>
+                <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" crossOrigin="anonymous"/>
+                <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" crossOrigin="anonymous"/>
             </Helmet>
             <Nav language={language} />
             <Footer />

@@ -22,7 +22,7 @@ const Index = () => {
           language={language}
         >
                <div className="container-fluid p-0">
-                    <About />
+                    <About language={language.lang} />
                     <hr className="m-0" />
                     <Experiences />
                     <hr className="m-0" />

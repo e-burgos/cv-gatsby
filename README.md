@@ -12,7 +12,30 @@
 
     cd starter
     gatsby develop
-## Inicia con Gatsby's default starter!
+
+## Dependencias de este proyecto
+
+1. Utilizaremos Strapi Headless CMS para consumir los datos, por lo tanto en nuestro proyecto instalaremos:
+
+        npm i gatsby-source-strapi
+
+2. Digigete al archicho gatsby-config.js en la raíz del proyecto y agrega el siguiente código:
+
+        {
+        resolve: 'gatsby-source-strapi',
+            options: {
+                apiURL: 'http://localhost:1337',
+                queryLimit: 1000,
+                contentTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills']
+            }
+        },
+    
+    **Nota:** apiURL pertenece a tu backend de strapi, contentTypes es un arreglo de todos tus contentTypes.
+
+3. Reinicia el proyecto para que los cambios sean aplicados.
+
+---
+## Más información acerca de Gatsby's default starter!
 
 <p align="center">
   <a href="https://www.gatsbyjs.com">

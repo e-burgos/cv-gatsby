@@ -1,15 +1,20 @@
 import React from 'react';
 import CourseItem from './CourseItem';
+import useCourse from '../hooks/useCourse';
 
-const Courses = () => {
+const Courses = ({language}) => {
+
+    const courses = useCourse()
+    const data = courses.filter(item => item.language.language === language)
+
     return ( 
         <section className="resume-section" id="awards">
             <div className="resume-section-content">
                 <h2 className="mb-5">Cursos, Certificados y logros</h2>
                 <ul className="fa-ul mb-0">
-                    <CourseItem />
-                    <CourseItem />
-                    <CourseItem />
+                    {data.map(item => (
+                        <CourseItem item={item} key={item.id}/>
+                    ))}
                 </ul>
             </div>
         </section>
