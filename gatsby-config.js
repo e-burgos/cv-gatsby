@@ -21,7 +21,7 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',
         queryLimit: 1000,
-        collectionTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills'],
+        collectionTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills-categories', 'skills'],
       },
     },
     // {

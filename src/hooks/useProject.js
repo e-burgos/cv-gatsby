@@ -1,19 +1,22 @@
 import {graphql, useStaticQuery} from 'gatsby';
 
-const useSkill = () => {
+const useProject = () => {
     
     const resultado = useStaticQuery(graphql`
         query {
-            allStrapiSkillsCategories {
+            allStrapiProjectCategories {
                 nodes {
                     id
                     slug
                     esName
                     enName
-                    skills {
+                    projects {
                         id
-                        name
-                        url
+                        title
+                        description
+                        demoUrl
+                        backendRepo
+                        frontendRepo
                         image {
                             localFile {
                                 publicURL
@@ -24,7 +27,7 @@ const useSkill = () => {
             }
         }
     `)
-    return resultado.allStrapiSkillsCategories.nodes;
+    return resultado.allStrapiProjectCategories.nodes;
 }
  
-export default useSkill;
+export default useProject;

@@ -5,7 +5,7 @@ import useAbout from '../hooks/useAbout';
 const About = ({language}) => {
 
     const abouts = useAbout();
-    const data = abouts.filter( item => item.language.language === language);
+    const data = abouts.filter( item => item.language.language === language.lang);
 
     return ( 
         <section className="resume-section" id="about">

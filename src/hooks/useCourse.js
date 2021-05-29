@@ -10,6 +10,7 @@ const useCourse = () => {
                     degree
                     institution
                     date
+                    urlcourse
                     language {
                         language
                     }

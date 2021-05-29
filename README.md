@@ -26,11 +26,11 @@
             options: {
                 apiURL: 'http://localhost:1337',
                 queryLimit: 1000,
-                contentTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills']
+                collectionTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills']
             }
         },
     
-    **Nota:** apiURL pertenece a tu backend de strapi, contentTypes es un arreglo de todos tus contentTypes.
+    **Nota:** apiURL pertenece a tu backend de strapi, collectionTypes es un arreglo de todos tus contentTypes.
 
 3. Reinicia el proyecto para que los cambios sean aplicados.
 

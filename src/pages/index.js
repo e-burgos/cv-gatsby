@@ -5,15 +5,18 @@ import Experiences from '../components/Experiences';
 import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Courses from '../components/Courses';
+import Projects from '../components/Projects';
 
 const Index = () => {
 
      const language = {
-        about: 'sobre mí',
-        experience: 'experiencia',
-        education: 'educación',
-        skills: 'habilidades',
-        extras: 'extras',
+        about: 'Sobre mí',
+        experience: 'Experiencia',
+        education: 'Educación',
+        skills: 'Habilidades',
+        extrasMenu: 'Cursos',
+        extras: 'Cursos & Certificaciones',
+        projects: 'Proyectos',
         lang: 'es'
     };
 
@@ -22,15 +25,17 @@ const Index = () => {
           language={language}
         >
                <div className="container-fluid p-0">
-                    <About language={language.lang} />
+                    <About language={language} />
                     <hr className="m-0" />
-                    <Experiences />
+                    <Experiences language={language}/>
                     <hr className="m-0" />
-                    <Education />
+                    <Education language={language}/>
                     <hr className="m-0" />
-                    <Skills />
+                    <Skills language={language}/>
                     <hr className="m-0" />
-                    <Courses />
+                    <Courses language={language}/>
+                    <hr className="m-0" />
+                    <Projects language={language}/>
                     <hr className="m-0" />
                </div>
         </Layout> 

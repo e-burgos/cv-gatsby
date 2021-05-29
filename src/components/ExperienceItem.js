@@ -1,36 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const ExperienceItem = () => {
+const ExperienceItem = ({item}) => {
+
+    const fullDescription = item.description;
+    const shortDescription = item.description.substr(0,225) + " ...";
+    const [description, setDescription] = useState(shortDescription);
+
+    const showDescription = () => {
+        if(description === shortDescription) {
+            setDescription(fullDescription);
+        } else {
+            setDescription(shortDescription);
+        }
+    };
+
     return ( 
         <div className="timeline">
             <div className="icon"></div>
             <div className="date-content">
                 <div className="date-outer">
                     <span className="date">
-                        <span className="month">Actualidad</span>
-                        <span className="year">2021</span>
+                        <span className="month">{item.language.language === 'en' ? item.timeJob.substr(0,7) : item.timeJob.substr(0,6)}</span>
+                        <span className="year">{item.yearsJob}</span>
                     </span>
                 </div>
             </div>
             <div className="timeline-content">
-                <h3 className="mb-0">Desarrollador Web Full Stack</h3>
-                <div className="subheading">Profesional Independiente</div>
-                <div><a href="https://github.com/e-burgos" rel="noreferrer" target="_blank">Github</a></div>
-                <div className="mb-3">ene 2020 – actualidad • Buenos Aires, Argentina</div>
-                <p>Mi trabajo se centra en el desarrollo de aplicaciones webs robustas, ordenadas y seguras de acuerdo al uso de las buenas
-                practicas actuales. Tengo experiencia en diferentes tecnologías tanto de backend como frontend trabajando a diario con
-                JavaScript, HTML, CSS, NodeJs, ExpressJs y ReactJs. En todos mis proyectos incorporo Restful Web Service y utilizo
-                diferentes DBs como MongoDB, MySQL, Firebase con sus respectivos OMRs, según lo requiera el proyecto.
-                Estoy familiarizado con otras tecnologías como ser JWT, AWS, Bootstrap4, Tailwind CSS, Sequelizejs, Mongoose, EJS,
-                RubyOnRails, Wordpress, entre otras.
-                Me agrada hacer deployment mis proyectos en plataformas de servicio como Heroku, Netlity o Vercel para una correcta
-                prueba.
-                Para mí, la comunicación es muy importante, tanto en el código como en el equipo de trabajo, para ello me siento muy
-                cómodo usando GIT a diario y herramientas que comuniquen y organicen rápidamente como Trello, Slack, Discord o G-Suite.
-                Particularmente me interesan mucho más los proyectos que requieran resolver problemas desafiantes, pienso que es la
-                mejor manera de obtener nuevos conocimientos en el día a día y sentir la satisfacción de resolver impedimentos que te
-                ponen a prueba.
-                </p>
+                <h3 className="mb-0">{item.position}</h3>
+                {item.companyUrl !== null ? 
+                    <a href={item.companyUrl} rel="noreferrer" target="_blank"><span className="subheading">{item.company}</span></a>
+                : 
+                    <div className="subheading">{item.company}</div>
+                }
+                {item.projects.length !== 0 ?
+                    <div className="mb-2">
+                    {item.language.language === "es" ? "Proyectos Relacionados: " : "Related Projects: "}    
+                    {item.projects.map(project => (
+                        <div key={project.id}><a href={project.demoUrl} rel="noreferrer" target="_blank">{project.title}  </a></div>
+                    ))} 
+                    </div>
+                : null}
+                <div className="mb-1">{item.startDate} – {item.endDate ? item.endDate : item.status} • {item.timeJob}</div>
+                <div className="mb-3">{item.place}</div>
+                <p>{description}</p>
+                {description === shortDescription ?
+                    <button type="button" className="btn btn-sm btn-light" onClick={() => showDescription()}>{item.language.language === "es" ? "Mostrar Más" : "Show More"}</button>
+                :
+                    <button type="button" className="btn btn-sm btn-light" onClick={() => showDescription()}>{item.language.language === "es" ? "Mostrar Menos" : "Show Less"}</button>
+                }
             </div>
         </div>
      );

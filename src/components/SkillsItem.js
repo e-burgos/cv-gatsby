@@ -1,10 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const SkillsItem = () => {
+const SkillsItem = ({item}) => {
+
+    const [itemName, setItemName] = useState("");
+
+    const showName = () => {
+        setItemName(item.name);
+    }
+
+    const hideName = () => {
+        setItemName("");
+    }
+
     return ( 
         <li className="list-inline-item">
-            <img className="rounded-circle mx-auto" width="55px" height="55px" src="/images/tech-icons/030-html-5.svg" data-toggle="tooltip" data-placement="top" title="HTML5" alt="HTML5" />
-            <small className="text-skill">HTML5</small>
+            <button
+                onMouseOver={() => showName()}
+                onFocus={() => showName()}
+                onMouseLeave={() => hideName()}
+                className="btn btn-light button-skill"
+                type="button"
+            >
+                <img  
+                className="rounded-circle" 
+                width="55px" 
+                height="55px" 
+                src={item.image.localFile.publicURL} data-toggle="tooltip" 
+                data-placement="top" 
+                title={item.name} 
+                alt={item.name} />
+                {itemName !== "" ?
+                <>
+                <br/><a href={item.url} rel="noreferrer" target="_blank"><small className="text-skill">{item.name}</small></a>
+                </>
+            : null}
+            </button>
         </li>
      );
 }

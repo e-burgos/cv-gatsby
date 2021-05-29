@@ -4,9 +4,19 @@ const useEducation = () => {
     
     const resultado = useStaticQuery(graphql`
         query {
-            allStrapiEducation{
+            allStrapiEducation {
                 nodes {
                     id
+                    institution
+                    infoUrl
+                    degree
+                    certificateUrl
+                    description
+                    startDate
+                    endDate
+                    language {
+                        language
+                    }
                 }
             }
         }

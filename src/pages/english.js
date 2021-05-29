@@ -5,15 +5,18 @@ import Experiences from '../components/Experiences';
 import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Courses from '../components/Courses';
+import Projects from '../components/Projects';
 
 const English = () => {
 
     const language = {
-        about: 'about me',
-        experience: 'experience',
-        education: 'education',
-        skills: 'skills',
-        extras: 'extras',
+        about: 'About Me',
+        experience: 'Experience',
+        education: 'Education',
+        skills: 'Skills',
+        extrasMenu: 'Courses',
+        extras: 'Courses & Certificates',
+        projects: 'Projects',
         lang: 'en'
     };
 
@@ -22,15 +25,17 @@ const English = () => {
             language={language}
         >
                <div className="container-fluid p-0">
-                    <About language={language.lang} />
+                    <About language={language} />
                     <hr className="m-0" />
-                    <Experiences language={language.lang}/>
+                    <Experiences language={language}/>
                     <hr className="m-0" />
-                    <Education language={language.lang}/>
+                    <Education language={language}/>
                     <hr className="m-0" />
-                    <Skills language={language.lang}/>
+                    <Skills language={language}/>
                     <hr className="m-0" />
-                    <Courses language={language.lang}/>
+                    <Courses language={language}/>
+                    <hr className="m-0" />
+                    <Projects language={language}/>
                     <hr className="m-0" />
                </div>
         </Layout> 
