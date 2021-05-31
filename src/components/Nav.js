@@ -30,7 +30,7 @@ const Nav = ({language}) => {
 
                     { language.lang === 'es' ?
                     <>
-                        <li className="nav-item"><a className="nav-link" rel="noreferrer" href="#" target="_blank"><small>Descargar CV</small></a></li> 
+                        <li className="nav-item"><a className="nav-link" rel="noreferrer" href="https://drive.google.com/file/d/1FqCMt0GLPRdhrhgz4KBl-D3nbsK6yLZ8/view?usp=sharing" target="_blank"><small>Descargar CV</small></a></li> 
                         <li className="nav-item">
                             <Link
                                 to={'/english'}
@@ -42,7 +42,7 @@ const Nav = ({language}) => {
 
                     { language.lang === 'en' ?
                     <>
-                        <li className="nav-item"><a className="nav-link" rel="noreferrer" href="#" target="_blank"><small>Download CV</small></a></li> 
+                        <li className="nav-item"><a className="nav-link" rel="noreferrer" href="https://drive.google.com/file/d/1FqCMt0GLPRdhrhgz4KBl-D3nbsK6yLZ8/view?usp=sharing" target="_blank"><small>Download CV</small></a></li> 
                         <li className="nav-item">
                             <Link
                                 to={'/'}

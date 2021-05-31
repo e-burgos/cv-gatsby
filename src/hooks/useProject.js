@@ -4,30 +4,37 @@ const useProject = () => {
     
     const resultado = useStaticQuery(graphql`
         query {
-            allStrapiProjectCategories {
+            allStrapiProjects {
                 nodes {
                     id
-                    slug
-                    esName
-                    enName
-                    projects {
-                        id
-                        title
-                        description
-                        demoUrl
-                        backendRepo
-                        frontendRepo
-                        image {
-                            localFile {
-                                publicURL
+                    title
+                    description
+                    demoUrl
+                    backendRepo
+                    frontendRepo
+                    language {
+                        language
+                    }
+                    image {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: 1200, duotone: { highlight: "#0ec4f1", shadow: "#192550", opacity: 0 }) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
                             }
                         }
+                    }
+                    project_categories {
+                        id
+                        esName
+                        enName
                     }
                 }
             }
         }
+
     `)
-    return resultado.allStrapiProjectCategories.nodes;
+    return resultado.allStrapiProjects.nodes;
 }
  
 export default useProject;
