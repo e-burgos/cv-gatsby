@@ -2,16 +2,16 @@
 
 1.  **Instalar gatsby-cli de forma global:**
 
-    sudo npm i -g gatsby-cli
+        sudo npm i -g gatsby-cli
 
 2.  **Crear un nuevo proyecto:**
 
-    gatsby new miproyecto
+        gatsby new miproyecto
 
 3.  **Ejecuta tu proyecto:**
 
-    cd starter
-    gatsby develop
+        cd starter
+        gatsby develop
 
 ## Dependencias de este proyecto
 
@@ -19,14 +19,14 @@
 
         npm i gatsby-source-strapi
 
-2. Digigete al archicho gatsby-config.js en la raíz del proyecto y agrega el siguiente código:
+2. Busca al archicho gatsby-config.js en la raíz del proyecto y agrega el siguiente código:
 
         {
         resolve: 'gatsby-source-strapi',
             options: {
                 apiURL: 'http://localhost:1337',
                 queryLimit: 1000,
-                collectionTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills']
+                collectionTypes: ['about', 'courses', 'education', 'experience', 'languages', 'project-categories', 'projects', 'skills-categories', 'skills'],
             }
         },
     
