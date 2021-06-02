@@ -7,11 +7,10 @@ const Projects = ({language}) => {
 
     // Hooks
     const allCategoriesProjects = useCategoriesProject();
-    const allProjects = useProject();
+    const filterProjects = useProject();
 
-    // Filter language
-    const categoriesProjects = allCategoriesProjects.filter(category => category.language.language === language.lang && category.projects.length !== 0);
-    const filterProjects = allProjects.filter(project => project.language.language === language.lang);
+    // Filter con proyectos
+    const categoriesProjects = allCategoriesProjects.filter(category => category.projects.length !== 0);
 
     // State
     const [projects, setProjects] = useState(filterProjects)
@@ -36,21 +35,21 @@ const Projects = ({language}) => {
                     <button
                         key={category.id}
                         onClick={() => filterCategory(category.projects)}
-                        className="btn btn-light mr-2"
+                        className="btn btn-light mr-2 mb-2"
                     >
-                        <span className="badge badge-pill badge-dark">{category.projects.length}</span> {category.esName}
+                        <span className="badge badge-pill badge-dark">{category.projects.length}</span> {language.lang === "es" ? category.esName : category.enName}
                     </button>
                 ))}
                     
                 <button
                     onClick={() => loadProjects()}
-                    className="btn btn-dark"
+                    className="btn btn-dark mb-2"
                 ><span className="badge badge-pill badge-light">{filterProjects.length}</span> {language.lang === "es" ? "Todos" : "All Projects"}</button>
                 
                 <div className="card-columns mt-3">
                 
                     {projects.map(project => (
-                        <ProjectItem item={project} key={project.id}/>
+                        <ProjectItem item={project} key={project.id} language={language}/>
                     ))}
                 </div>
             </>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Layout from '../components/Layout';
 import About from '../components/About';
 import Experiences from '../components/Experiences';
@@ -6,6 +6,7 @@ import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Courses from '../components/Courses';
 import Projects from '../components/Projects';
+import MobileMenu from '../components/MobileMenu';
 
 const Index = () => {
 
@@ -20,10 +21,26 @@ const Index = () => {
         lang: 'es'
     };
 
+     // state del menu mobile
+     const [menu, setMenu] = useState(false)
+
+
+    // Mostrando menu mobile
+    const showMobileMenu = () => {
+        if(menu === false){
+          setMenu(true);
+        } else {
+          setMenu(false);
+        }
+    }
+
      return (
-        <Layout
-          language={language}
-        >
+          <>
+          {!menu ?  
+               <Layout
+                    language={language}
+                    showMobileMenu={showMobileMenu}
+               >
                <div className="container-fluid p-0">
                     <About language={language} />
                     <hr className="m-0" />
@@ -38,7 +55,14 @@ const Index = () => {
                     <Projects language={language}/>
                     <hr className="m-0" />
                </div>
-        </Layout> 
+               </Layout> 
+          : 
+               <MobileMenu 
+                    language={language}
+                    showMobileMenu={showMobileMenu} 
+               />
+          } 
+          </>
      );
 }
  

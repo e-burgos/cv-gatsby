@@ -10,13 +10,12 @@ const useCategoriesProject = () => {
                     slug
                     esName
                     enName
-                    language {
-					    language
-      	            }
                     projects {
                         id
                         title
-                        description
+                        descriptionEs
+                        descriptionEn
+                        access
                         demoUrl
                         backendRepo
                         frontendRepo

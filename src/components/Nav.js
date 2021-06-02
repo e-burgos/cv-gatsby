@@ -3,7 +3,8 @@ import { Link } from 'gatsby';
 import useAbout from '../hooks/useAbout';
 
 
-const Nav = ({language}) => {
+const Nav = ({language, showMobileMenu}) => {
+
 
     // Consultar la foto de perfil de forma externa
     const abouts = useAbout();
@@ -17,7 +18,11 @@ const Nav = ({language}) => {
                     <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src={avatar} alt="profile" />
                 </span>
             </a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+            <button
+                onClick={() => showMobileMenu()} 
+                className="navbar-toggler" 
+                type="button"
+            ><span className="navbar-toggler-icon"></span></button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav">
                     <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#about">{language.about}</a></li>

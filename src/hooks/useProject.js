@@ -8,13 +8,12 @@ const useProject = () => {
                 nodes {
                     id
                     title
-                    description
+                    descriptionEs
+                    descriptionEn
+                    access
                     demoUrl
                     backendRepo
                     frontendRepo
-                    language {
-                        language
-                    }
                     image {
                         localFile {
                             childImageSharp {

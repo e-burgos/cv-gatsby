@@ -4,7 +4,7 @@ const useSkill = () => {
     
     const resultado = useStaticQuery(graphql`
         query {
-            allStrapiSkillsCategories {
+            allStrapiSkillsCategories(sort: {fields: id}) {
                 nodes {
                     id
                     slug
