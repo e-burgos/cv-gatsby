@@ -11396,24 +11396,24 @@ module.exports = withSideEffect;
 /***/ }),
 
 /***/ "react-dom/server":
-/*!***********************************************************************************************!*\
-  !*** external "/Users/eburgos/Projects/CVPersonal/cvGatsby/node_modules/react-dom/server.js" ***!
-  \***********************************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** external "/Users/aplle/Projects/CVPersonal/cvGatsby/node_modules/react-dom/server.js" ***!
+  \*********************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/eburgos/Projects/CVPersonal/cvGatsby/node_modules/react-dom/server.js");;
+module.exports = require("/Users/aplle/Projects/CVPersonal/cvGatsby/node_modules/react-dom/server.js");;
 
 /***/ }),
 
 /***/ "react":
-/*!******************************************************************************************!*\
-  !*** external "/Users/eburgos/Projects/CVPersonal/cvGatsby/node_modules/react/index.js" ***!
-  \******************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** external "/Users/aplle/Projects/CVPersonal/cvGatsby/node_modules/react/index.js" ***!
+  \****************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/eburgos/Projects/CVPersonal/cvGatsby/node_modules/react/index.js");;
+module.exports = require("/Users/aplle/Projects/CVPersonal/cvGatsby/node_modules/react/index.js");;
 
 /***/ }),
 

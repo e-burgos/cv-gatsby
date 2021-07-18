@@ -32,11 +32,11 @@ const ExperienceItem = ({item}) => {
                 : 
                     <div className="subheading">{item.company}</div>
                 }
-                {item.projects.length !== 0 ?
+                {item.projects.length !== 0 && item.projects[0].title !== 'NoProject' ?
                     <div className="mb-2">
                     {item.language.language === "es" ? "Proyectos Relacionados: " : "Related Projects: "}    
                     {item.projects.map(project => (
-                        <div key={project.id}><a href={project.demoUrl} rel="noreferrer" target="_blank">{project.title}  </a></div>
+                        <div key={project.id}><a href={project.demoUrl} rel="noreferrer" target="_blank">{project.title}</a></div>
                     ))} 
                     </div>
                 : null}

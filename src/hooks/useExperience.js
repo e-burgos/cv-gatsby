@@ -21,12 +21,8 @@ const useExperience = () => {
                             id
                             title
                             demoUrl
-                            description
-                            image {
-                                localFile {
-                                    publicURL
-                                }
-                            }
+                            descriptionEs
+                            descriptionEn
                         }
                     language {
                         language

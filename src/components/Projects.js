@@ -7,7 +7,8 @@ const Projects = ({language}) => {
 
     // Hooks
     const allCategoriesProjects = useCategoriesProject();
-    const filterProjects = useProject();
+    const allProjects = useProject();
+    const filterProjects = allProjects.filter( project => project.title !== 'NoProject')
 
     // Filter con proyectos
     const categoriesProjects = allCategoriesProjects.filter(category => category.projects.length !== 0);
@@ -35,7 +36,7 @@ const Projects = ({language}) => {
                     <button
                         key={category.id}
                         onClick={() => filterCategory(category.projects)}
-                        className="btn btn-light mr-2 mb-2"
+                        className={`btn mr-2 mb-2 ${category.slug === 'project-leader' ? 'btn-primary' : 'btn-light'}`}
                     >
                         <span className="badge badge-pill badge-dark">{category.projects.length}</span> {language.lang === "es" ? category.esName : category.enName}
                     </button>
