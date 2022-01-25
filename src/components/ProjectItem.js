@@ -2,8 +2,6 @@ import React from 'react';
 
 const ProjectItem = ({item, language}) => {
 
-    //const image = item.image.localFile.childImageSharp.fluid.srcWebp;
-
     return ( 
         <div className="card">
             <div className="d-flex justify-content-center align-items-center">

@@ -36,7 +36,8 @@ const Projects = ({language}) => {
                     <button
                         key={category.id}
                         onClick={() => filterCategory(category.projects)}
-                        className={`btn mr-2 mb-2 ${category.slug === 'project-leader' ? 'btn-primary' : 'btn-light'}`}
+                        className={`btn btn-sm mr-2 mb-2 ${category.slug === 'project-leader' ? 'btn-primary' : 'btn-light' ? 
+                        category.slug === 'blockchain' ? 'btn-success' : 'btn-light' : 'btn-light'}`}
                     >
                         <span className="badge badge-pill badge-dark">{category.projects.length}</span> {language.lang === "es" ? category.esName : category.enName}
                     </button>
@@ -44,7 +45,7 @@ const Projects = ({language}) => {
                     
                 <button
                     onClick={() => loadProjects()}
-                    className="btn btn-dark mb-2"
+                    className="btn btn-sm btn-dark mb-2"
                 ><span className="badge badge-pill badge-light">{filterProjects.length}</span> {language.lang === "es" ? "Todos" : "All Projects"}</button>
                 
                 <div className="card-columns mt-3">

@@ -20,7 +20,7 @@ const ExperienceItem = ({item}) => {
             <div className="date-content">
                 <div className="date-outer">
                     <span className="date">
-                        <span className="month">{item.language.language === 'en' ? item.timeJob.substr(0,7) : item.timeJob.substr(0,6)}</span>
+                        <span className="month">{item.language.language === 'en' ? item.timeJob : item.timeJob}</span>
                         <span className="year">{item.yearsJob}</span>
                     </span>
                 </div>
