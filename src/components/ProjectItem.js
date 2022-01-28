@@ -1,12 +1,15 @@
 import React from 'react';
 
-const ProjectItem = ({item, language}) => {
+const ProjectItem = ({item, language, isCV}) => {
 
     return ( 
         <div className="card">
             <div className="d-flex justify-content-center align-items-center">
-                {item.image !== null ?
-                    <img className="card-img-top" width="600" src={item.image.localFile.childImageSharp.fluid.srcWebp} alt="project"/>
+                {isCV ?
+                    <img className="card-img-top" width="600" height="100" src="https://media.istockphoto.com/photos/gloomy-wall-background-black-texture-cement-surface-picture-id639935148?k=6&m=639935148&s=170667a&w=0&h=rcZgdrXC8SmnFtwQrfxwIE0McuGX8-9wWXSkT7UMy1Y=" alt="project"/>
+
+                : item.image !== null ?
+                    <img className="card-img-top" width="600" height="180" src={item.image.localFile.childImageSharp.fluid.srcWebp} alt="project"/>
                 : 
                     <img className="card-img-top" width="600" height="180" src="https://media.istockphoto.com/photos/gloomy-wall-background-black-texture-cement-surface-picture-id639935148?k=6&m=639935148&s=170667a&w=0&h=rcZgdrXC8SmnFtwQrfxwIE0McuGX8-9wWXSkT7UMy1Y=" alt="project"/>
                 }

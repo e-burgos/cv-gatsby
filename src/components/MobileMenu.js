@@ -10,6 +10,7 @@ const MobileMenu = ({language, showMobileMenu}) => {
                     onClick={() => showMobileMenu()} 
                     className="navbar-toggler" 
                     type="button"
+                    aria-label='menu'
                 ><span className="navbar-toggler-icon"></span></button>
             </div>
             <div className="d-flex justify-content-center align-items-center h-100">
@@ -24,7 +25,12 @@ const MobileMenu = ({language, showMobileMenu}) => {
 
                     { language.lang === 'es' ?
                     <>
-                        <li className="nav-item mobile-item"><a className="nav-link" rel="noreferrer" href="https://drive.google.com/file/d/1FqCMt0GLPRdhrhgz4KBl-D3nbsK6yLZ8/view?usp=sharing" target="_blank"><small>Descargar CV</small></a></li> 
+                        <li className="nav-item mobile-item">
+                            <Link
+                                to={'/cv-spanish'}
+                                className="nav-link"
+                            ><small>Descargar CV</small></Link>
+                        </li> 
                         <li className="nav-item mobile-item">
                             <Link
                                 to={'/english'}
@@ -36,7 +42,12 @@ const MobileMenu = ({language, showMobileMenu}) => {
 
                     { language.lang === 'en' ?
                     <>
-                        <li className="nav-item mobile-item"><a className="nav-link" rel="noreferrer" href="https://drive.google.com/file/d/1FqCMt0GLPRdhrhgz4KBl-D3nbsK6yLZ8/view?usp=sharing" target="_blank"><small>Download CV</small></a></li> 
+                        <li className="nav-item mobile-item">
+                            <Link
+                                to={'/cv-english'}
+                                className="nav-link"
+                            ><small>Download CV</small></Link>
+                        </li> 
                         <li className="nav-item mobile-item">
                             <Link
                                 to={'/'}

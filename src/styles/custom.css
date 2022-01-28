@@ -391,5 +391,16 @@ a:hover {
     }
 }
 
+.pointer-effect {
+    cursor: pointer;
+}
 
+.pointer-effect:hover {
+    border:#007bff solid 1px;
+    border-radius: 10px;
+    padding: 5px;
+}
 
+.pointer-effect:active {
+    background-image: linear-gradient(to top, #007bff, #010ec7);
+}

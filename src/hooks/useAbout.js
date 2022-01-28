@@ -20,6 +20,7 @@ const useAbout = () => {
                     address
                     linkedin
                     github
+                    blog
                     language {
                         language 
                     }

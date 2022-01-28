@@ -3,14 +3,14 @@ import useCategoriesProject from '../hooks/useCategoriesProject';
 import useProject from '../hooks/useProject';
 import ProjectItem from './ProjectItem';
 
-const Projects = ({language}) => {
+const Projects = ({isCV, language}) => {
 
     // Hooks
     const allCategoriesProjects = useCategoriesProject();
     const allProjects = useProject();
     const filterProjects = allProjects.filter( project => project.title !== 'NoProject')
 
-    // Filter con proyectos
+    // Filter
     const categoriesProjects = allCategoriesProjects.filter(category => category.projects.length !== 0);
 
     // State
@@ -24,8 +24,6 @@ const Projects = ({language}) => {
         setProjects(filterProjects);
     }
 
-    //console.log(categoriesProjects)
-
     return ( 
         <section className="resume-section" id="projects">
             <div className="resume-section-content">
@@ -36,8 +34,10 @@ const Projects = ({language}) => {
                     <button
                         key={category.id}
                         onClick={() => filterCategory(category.projects)}
-                        className={`btn btn-sm mr-2 mb-2 ${category.slug === 'project-leader' ? 'btn-primary' : 'btn-light' ? 
-                        category.slug === 'blockchain' ? 'btn-success' : 'btn-light' : 'btn-light'}`}
+                        className={`btn btn-sm mr-2 mb-2 ${
+                            category.slug === 'project-leader' ? 'btn-primary' :
+                            category.slug === 'microfrontends' ? 'btn-warning' : 
+                            category.slug === 'blockchain' ? 'btn-success' : 'btn-light'}`}
                     >
                         <span className="badge badge-pill badge-dark">{category.projects.length}</span> {language.lang === "es" ? category.esName : category.enName}
                     </button>
@@ -51,7 +51,7 @@ const Projects = ({language}) => {
                 <div className="card-columns mt-3">
                 
                     {projects.map(project => (
-                        <ProjectItem item={project} key={project.id} language={language}/>
+                        <ProjectItem isCV={isCV} item={project} key={project.id} language={language}/>
                     ))}
                 </div>
             </>

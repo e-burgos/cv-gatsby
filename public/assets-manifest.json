@@ -1,4 +1,6 @@
 {
   "main.js": "render-page.js",
-  "render-page.js.map": "render-page.js.map"
+  "render-page.js.map": "render-page.js.map",
+  "static/notes-icon.png": "static/notes-icon-0e831cf84361295e8310ccf83e59005d.png",
+  "static/pdf-download.png": "static/pdf-download-e23884162032f2a0e9fe575be1c7f34d.png"
 }

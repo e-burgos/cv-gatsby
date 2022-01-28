@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import Layout from '../components/Layout';
 import About from '../components/About';
 import Experiences from '../components/Experiences';
@@ -11,28 +11,30 @@ import MobileMenu from '../components/MobileMenu';
 const Index = () => {
 
      const language = {
-        about: 'Sobre mí',
-        experience: 'Experiencia',
-        education: 'Educación',
-        skills: 'Habilidades',
-        extrasMenu: 'Cursos',
-        extras: 'Cursos & Certificaciones',
-        projects: 'Proyectos',
-        lang: 'es'
-    };
+          about: 'Sobre mí',
+          experience: 'Experiencia',
+          education: 'Educación',
+          skills: 'Habilidades',
+          extrasMenu: 'Cursos',
+          extras: 'Cursos & Certificaciones',
+          projects: 'Proyectos',
+          lang: 'es'
+     };
 
-     // state del menu mobile
-     const [menu, setMenu] = useState(false)
+          // state del menu mobile
+          const [menu, setMenu] = useState(false)
 
 
-    // Mostrando menu mobile
-    const showMobileMenu = () => {
-        if(menu === false){
-          setMenu(true);
-        } else {
-          setMenu(false);
-        }
-    }
+     // Mostrando menu mobile
+     const showMobileMenu = () => {
+          if(menu === false){
+               setMenu(true);
+          } else {
+               setMenu(false);
+          }
+     }
+
+     const printRef = useRef();
 
      return (
           <>
@@ -40,8 +42,9 @@ const Index = () => {
                <Layout
                     language={language}
                     showMobileMenu={showMobileMenu}
+                    printRef={printRef}
                >
-               <div className="container-fluid p-0">
+               <div className="container-fluid p-0" ref={printRef}>
                     <About language={language} />
                     <hr className="m-0" />
                     <Experiences language={language}/>
